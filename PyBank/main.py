@@ -22,9 +22,9 @@ with open (csvpath, newline="") as csvfile:
         #calculates the change in revenue per row
             EndingRevenue = int(row[1])
             RevenueChange = EndingRevenue - StartingRevenue
+            RevenueChange2.append(RevenueChange)
             StartingRevenue = EndingRevenue
         #creates a list of the change in revenue per row in order to call the total, average, min and max values
-            RevenueChange2.append(RevenueChange)
             Greatest = int(max(RevenueChange2))
             Least = int(min(RevenueChange2))
 TotalRevenueChange = sum(RevenueChange2)
