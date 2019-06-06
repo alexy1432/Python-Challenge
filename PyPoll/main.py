@@ -23,6 +23,17 @@ with open (csvpath, newline="") as csvfile:
             VoteCountPercent.append(candidates.count(x)/itemCount)
 #assign a winner by taking the index value of the candidate with the highest votes
     Winner = ucandidates[VoteCount.index(max(VoteCount))]
+    print("Election Results")
+    print("-------------------------")
+    print("Total Votes: " + str(itemCount))
+    print("-------------------------")
+    print(ucandidates[0] + ": " + str(round((VoteCountPercent[0])*100,1)) + "% " + "(" + str(VoteCount[0]) + ")")         
+    print(ucandidates[1] + ": " + str(round((VoteCountPercent[1])*100,1)) + "% " + "(" + str(VoteCount[1]) + ")")
+    print(ucandidates[2] + ": " + str(round((VoteCountPercent[2])*100,1)) + "% " + "(" + str(VoteCount[2]) + ")")
+    print(ucandidates[3] + ": " + str(round((VoteCountPercent[3])*100,1)) + "% " + "(" + str(VoteCount[3]) + ")")
+    print("-------------------------")
+    print("Winner: " + str(Winner))
+    print("-------------------------")
 
 with open("Election Results" + ".txt", "w") as text:      
     text.write("Election Results" + "\n")
