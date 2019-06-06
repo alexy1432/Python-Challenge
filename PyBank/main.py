@@ -27,11 +27,13 @@ with open (csvpath, newline="") as csvfile:
         #creates a list of the change in revenue per row in order to call the total, average, min and max values
             Greatest = int(max(RevenueChange2))
             Least = int(min(RevenueChange2))
-TotalRevenueChange = sum(RevenueChange2)
-AverageRevenueChange = TotalRevenueChange/itemCount            
+                       
 #calls the row value for the greatest and least changes in revenue        
 GreatestDate = date[RevenueChange2.index(Greatest)]
 LeastDate = date[RevenueChange2.index(Least)]
+RevenueChange2.pop(0)
+TotalRevenueChange = sum(RevenueChange2)
+AverageRevenueChange = TotalRevenueChange/(itemCount-1) 
 
     
 with open("calculations" + '.txt', 'w') as text:
